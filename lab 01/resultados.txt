@@ -1,0 +1,21 @@
+Resultados LAB 01 Classificação e Pesquisa de Dados
+
+Nome: Gustavo Machado Silva
+Cartão: 316347
+
+Para um array de 100.000 valores:
+
+Sequência de Potência de 2:
+h max = 65.536
+Tempo de Execução: 1,2520 segundos
+Movimentações: 16147372
+
+Sequência de 3N + 1:
+h max = 88.573
+Tempo de Execução: 0.2855 segundos
+Movimentações: 2783035
+
+Sequência de Ciura:
+h max = 90.927
+Tempo de Execução: 0.1934 segundos
+Movimentações: 1185788

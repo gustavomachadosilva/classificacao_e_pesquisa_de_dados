@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-1959bdc222fbc90d8a65f7ebfdb4e226"}, "mark": {"type": "line", "point": {"fill": "white", "filled": false}}, "encoding": {"color": {"field": "particionamento", "type": "nominal"}, "tooltip": [{"field": "particionamento", "type": "nominal"}, {"field": "tamanho", "type": "quantitative"}, {"field": "tempo", "type": "quantitative"}, {"field": "trocas", "type": "quantitative"}, {"field": "recursoes", "type": "quantitative"}], "x": {"field": "tamanho", "scale": {"type": "log"}, "type": "quantitative"}, "y": {"field": "recursoes", "scale": {"clamp": true, "domain": [0, 1355077]}, "type": "quantitative"}}, "height": 600, "params": [{"name": "param_2", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "N\u00famero de Recursoes - Algoritmo de QuickSort", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-1959bdc222fbc90d8a65f7ebfdb4e226": [{"particionamento": "RANDOM-LOMUTO", "tamanho": 100, "recursoes": 135, "trocas": 359, "tempo": 0.007}, {"particionamento": "RANDOM-LOMUTO", "tamanho": 1000, "recursoes": 1353, "trocas": 6138, "tempo": 0.077}, {"particionamento": "RANDOM-LOMUTO", "tamanho": 10000, "recursoes": 13561, "trocas": 78680, "tempo": 0.978}, {"particionamento": "RANDOM-LOMUTO", "tamanho": 100000, "recursoes": 135545, "trocas": 1092079, "tempo": 12.387}, {"particionamento": "RANDOM-LOMUTO", "tamanho": 1000000, "recursoes": 1353901, "trocas": 12437212, "tempo": 134.752}, {"particionamento": "RANDOM-HOARE", "tamanho": 100, "recursoes": 141, "trocas": 228, "tempo": 0.006}, {"particionamento": "RANDOM-HOARE", "tamanho": 1000, "recursoes": 1337, "trocas": 3083, "tempo": 0.065}, {"particionamento": "RANDOM-HOARE", "tamanho": 10000, "recursoes": 13527, "trocas": 38806, "tempo": 0.796}, {"particionamento": "RANDOM-HOARE", "tamanho": 100000, "recursoes": 135401, "trocas": 460805, "tempo": 9.566}, {"particionamento": "RANDOM-HOARE", "tamanho": 1000000, "recursoes": 1354291, "trocas": 5362268, "tempo": 108.343}, {"particionamento": "MEDIANA3-LOMUTO", "tamanho": 100, "recursoes": 133, "trocas": 284, "tempo": 0.005}, {"particionamento": "MEDIANA3-LOMUTO", "tamanho": 1000, "recursoes": 1357, "trocas": 6309, "tempo": 0.07}, {"particionamento": "MEDIANA3-LOMUTO", "tamanho": 10000, "recursoes": 13459, "trocas": 85617, "tempo": 0.902}, {"particionamento": "MEDIANA3-LOMUTO", "tamanho": 100000, "recursoes": 135451, "trocas": 1062795, "tempo": 11.038}, {"particionamento": "MEDIANA3-LOMUTO", "tamanho": 1000000, "recursoes": 1354637, "trocas": 12178202, "tempo": 129.446}, {"particionamento": "MEDIANA3-HOARE", "tamanho": 100, "recursoes": 137, "trocas": 227, "tempo": 0.005}, {"particionamento": "MEDIANA3-HOARE", "tamanho": 1000, "recursoes": 1371, "trocas": 3090, "tempo": 0.065}, {"particionamento": "MEDIANA3-HOARE", "tamanho": 10000, "recursoes": 13587, "trocas": 38043, "tempo": 0.786}, {"particionamento": "MEDIANA3-HOARE", "tamanho": 100000, "recursoes": 135423, "trocas": 461178, "tempo": 9.386}, {"particionamento": "MEDIANA3-HOARE", "tamanho": 1000000, "recursoes": 1355077, "trocas": 5386782, "tempo": 108.309}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
